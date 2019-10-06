@@ -1,0 +1,25 @@
+.header-items {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    .item {
+        padding: 0 1rem;
+    }
+}
+
+.container-search {
+    background: white;
+    margin-left: 1rem;
+    padding: 1rem 12rem 1rem 0;
+
+    .text-search {
+        font-weight: bold;
+        color: #36f;
+        margin-left: -.7rem;
+        padding-right: 20px;
+    }
+}

@@ -1,0 +1,29 @@
+<nb-layout>
+    <nb-layout-header fixed>
+        <div class="d-flex align-items-center justify-content-between no-box-shadow w-100">
+            <div style="padding: 1.125rem;">
+                <img class="w-50 h-auto" src="../../../assets/img/mylist-horizontal-light.svg"/>
+            </div>
+            <div>
+                <ul class="header-items">
+                    <li class="item">Opção 1</li>
+                    <li class="item">Opção 2</li>
+                    <li class="item">Opção 3</li>
+                    <li class="item">Opção 4</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center container-search cursor-pointer" (click)="openSearch($event.target)">
+            <nb-search tag="search" placeholder="Buscar" hint="O que está procurando?" type="rotate-layout" #nbSearchComponent></nb-search>
+            <span class="text-search">Buscar</span>
+        </div>
+    </nb-layout-header>
+
+    <!--<nb-sidebar>Sidebar Content</nb-sidebar>-->
+
+    <nb-layout-column>
+        <router-outlet></router-outlet>
+    </nb-layout-column>
+
+</nb-layout>
