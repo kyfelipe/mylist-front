@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NbSearchService} from '@nebular/theme';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'ml-logged-layout',
@@ -10,12 +11,13 @@ export class LoggedLayoutComponent implements OnInit {
     @ViewChild('nbSearchComponent', {static: false}) nbSearchComponent;
     public valueSearch: string;
 
-    constructor(private searchService: NbSearchService) { }
+    constructor(private searchService: NbSearchService, private router: Router) { }
 
     ngOnInit() {
         this.searchService.onSearchSubmit()
             .subscribe((data: any) => {
                 this.valueSearch = data.term;
+                this.router.navigate(['/busca'], {queryParams: { q: data.term }});
             });
     }
 
