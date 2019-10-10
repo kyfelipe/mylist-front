@@ -3,6 +3,8 @@ import {CommonModule} from '@angular/common';
 
 import {MediaRoutingModule} from './media-routing.module';
 import {MediaComponent} from './media.component';
+import {MultimediaService} from '../../shared/service/multimedia/multimedia.service';
+import {MediaResolver} from './media.resolver';
 
 
 @NgModule({
@@ -10,6 +12,10 @@ import {MediaComponent} from './media.component';
     imports: [
         CommonModule,
         MediaRoutingModule
+    ],
+    providers: [
+        MultimediaService,
+        MediaResolver
     ]
 })
 export class MediaModule { }

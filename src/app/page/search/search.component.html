@@ -1,11 +1,11 @@
 <div class="d-flex flex-row flex-wrap justify-content-between w-100">
     <ml-card
-        class="w-30 cursor-pointer outline-none mb-2"
+        class="cursor-pointer outline-none mb-2"
         [routerLink]="['/media', m.id]"
         *ngFor="let m of $multimedia | async"
         [title]="m.title"
         [img]="m.imageUrl"
-        subTitle="{{m.genre}} <br/> {{m.episodes}} | {{m.duration}}"
+        subTitle="{{m.genre}} <br/> Episódios {{m.episodes}} | Duração {{m.duration}}"
     >
     </ml-card>
 </div>
