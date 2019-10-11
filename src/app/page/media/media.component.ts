@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {Multimedia} from '../../shared/model/multimedia/multimedia';
+import {Title} from '@angular/platform-browser';
 
 @Component({
     selector: 'ml-media',
@@ -7,11 +9,13 @@ import {ActivatedRoute} from '@angular/router';
     styleUrls: ['./media.component.scss']
 })
 export class MediaComponent implements OnInit {
+    public multimedia: Multimedia;
 
-    constructor(private route: ActivatedRoute) { }
+    constructor(private route: ActivatedRoute, private title: Title) { }
 
     ngOnInit() {
-        this.route.params.subscribe((p) => console.log(p.id));
+        this.multimedia = this.route.snapshot.data.multimedia;
+        this.title.setTitle('MyList | ' + this.multimedia.title);
     }
 
 }

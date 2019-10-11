@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Observable} from 'rxjs';
 import {SearchService} from '../../shared/service/search/search.service';
 import {MultimediaSearch} from '../../shared/model/multimedia/multimedia-search.model';
+import {Title} from '@angular/platform-browser';
 
 @Component({
     selector: 'ml-search',
@@ -14,10 +15,12 @@ export class SearchComponent implements OnInit {
 
     constructor(
         private route: ActivatedRoute,
-        private searchService: SearchService
+        private searchService: SearchService,
+        private title: Title
     ) { }
 
     ngOnInit() {
+        this.title.setTitle('MyList | Busca');
         this.route.queryParams.subscribe(
             (param) => this.$multimedia = this.searchService.search(param.q)
         );
