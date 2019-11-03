@@ -1,15 +1,15 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {MediaComponent} from './media.component';
-import {MediaResolver} from './media.resolver';
+import {MovieComponent} from './movie.component';
+import {MovieResolver} from './movie.resolver';
 
 
 const routes: Routes = [
     {
         path: '',
-        component: MediaComponent,
+        component: MovieComponent,
         resolve: {
-            multimedia: MediaResolver
+            movie: MovieResolver
         }
     }
 ];
@@ -18,4 +18,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class MediaRoutingModule { }
+export class MovieRoutingModule { }

@@ -10,7 +10,7 @@ const routes: Routes = [
         children: [
             { path: '', loadChildren: () => import('./../../page/home/home.module').then(m => m.HomeModule) },
             { path: 'busca', loadChildren: () => import('./../../page/search/search.module').then(m => m.SearchModule) },
-            { path: 'media/:id', loadChildren: () => import('./../../page/media/media.module').then(m => m.MediaModule) },
+            { path: 'movie/:id', loadChildren: () => import('../../page/movie/movie.module').then(m => m.MovieModule) },
         ]
     }
 ];

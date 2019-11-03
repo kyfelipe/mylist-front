@@ -3,7 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 import {environment} from '../../../../environments/environment';
-import {MultimediaSearch} from '../../model/multimedia/multimedia-search.model';
+import {Page} from '../../model/page/page.model';
+import {Movie} from '../../model/movie/movie.model';
 
 @Injectable()
 export class SearchService {
@@ -11,7 +12,7 @@ export class SearchService {
 
     constructor(private http: HttpClient) { }
 
-    public search(query: string): Observable<MultimediaSearch[]> {
-        return this.http.get<MultimediaSearch[]>(this.url + '/multimedia/search', { params: { q: query } } );
+    public search(query: string): Observable<Page<Movie>> {
+        return this.http.get<Page<Movie>>(this.url + '/movie/search', { params: { q: query } } );
     }
 }

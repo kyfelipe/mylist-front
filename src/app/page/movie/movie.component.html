@@ -1,0 +1,49 @@
+<!--<h2>{{multimedia.title}}</h2>
+<img [src]="multimedia.imageUrl" style="width: auto; height: auto;">-->
+<!--<nb-card status="primary">
+    <nb-card-header style="font-size: 1.1rem;">{{multimedia.title}}</nb-card-header>
+    <nb-card-body>
+        <img [src]="multimedia.imageUrl" style="width: auto; height: auto;">
+    </nb-card-body>
+</nb-card>-->
+<div class="card-media">
+    <div class="container-left">
+        <div class="thumbnail">
+            <img [alt]="'Poster de ' + movie.title" class="thumbnail left" [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"/>
+        </div>
+        <div style="margin-left: 2rem;margin-top: 450px;max-width: 320px">
+            <div>
+                <div class="separator">
+                    <span *ngIf="movie.genres.length === 1; else genre">Categoria:</span>
+                    <ng-template #genre>Categorias:</ng-template>
+                </div>
+                <span *ngFor="let genre of movie.genres;let i = index">
+                    {{genre.name}}<span *ngIf="i != movie.genres.length - 1">, </span>
+                </span>
+            </div>
+            <!--<div>
+                <div class="separator">
+                    <span *ngIf="movie.titleAlternative.length === 1; else titleAlternative">Título Alternativo:</span>
+                    <ng-template #titleAlternative>Títulos Alternativos:</ng-template>
+                </div>
+                <p>{{movie.titleAlternative}}</p>
+            </div>-->
+            <div>
+                <div class="separator">
+                    <span *ngIf="movie.production_companies.length === 1; else producer">Produtor:</span>
+                    <ng-template #producer>Produtores:</ng-template>
+                </div>
+                <span *ngFor="let production of movie.production_companies;let i = index">
+                    {{production.name}}<span *ngIf="i != movie.production_companies.length - 1">, </span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <h1>{{movie.title}}</h1>
+        <div class="separator">
+            Descrição:
+        </div>
+        <p>{{movie.overview}}</p>
+    </div>
+</div>
