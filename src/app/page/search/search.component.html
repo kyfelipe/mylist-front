@@ -1,8 +1,8 @@
-<div class="d-flex flex-row flex-wrap justify-content-between w-100" *ngIf="movie">
+<div class="d-flex flex-row flex-wrap justify-content-between w-100" *ngIf="movies">
     <ml-card
         class="cursor-pointer outline-none mb-2"
         [routerLink]="['/movie', m.id]"
-        *ngFor="let m of movie.results"
+        *ngFor="let m of movies.results"
         [title]="m.title"
         [img]="'https://image.tmdb.org/t/p/w500/' + m.poster_path"
         subTitle="{{m.tagline}} <br/> Nota {{m.vote_average}}"

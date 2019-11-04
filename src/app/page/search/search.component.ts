@@ -12,7 +12,7 @@ import {Page} from '../../shared/model/page/page.model';
     styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-    public movie: Page<Movie>;
+    public movies: Page<Movie>;
 
     constructor(
         private route: ActivatedRoute,
@@ -24,7 +24,7 @@ export class SearchComponent implements OnInit {
         this.title.setTitle('MyList | Busca');
         this.route.queryParams.subscribe(
             (param) => {
-                this.searchService.search(param.q).subscribe((movie) => this.movie = movie);
+                this.searchService.search(param.q).subscribe((movies) => this.movies = movies);
             }
         );
     }
