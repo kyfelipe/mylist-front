@@ -1,26 +1,31 @@
 <div class="d-flex flex-row flex-wrap justify-content-between w-100">
     <div class="grid w-100">
         <div
+            [routerLink]="'/movie/' + movies.results[0].id"
             class="grid-element-1"
             [ngStyle]="{background: getImage(movies.results[0]), backgroundSize: 'cover'}">
             <span class="grid-element-text">{{movies.results[0].title}}</span>
         </div>
         <div
+            [routerLink]="'/movie/' + movies.results[1].id"
             class="grid-element-2"
             [ngStyle]="{background: getImage(movies.results[1]), backgroundSize: 'cover'}">
             <span class="grid-element-text">{{movies.results[1].title}}</span>
         </div>
         <div
+            [routerLink]="'/movie/' + movies.results[2].id"
             class="grid-element-3"
             [ngStyle]="{background: getImage(movies.results[2]), backgroundSize: 'cover'}">
             <span class="grid-element-text">{{movies.results[2].title}}</span>
         </div>
         <div
+            [routerLink]="'/movie/' + movies.results[3].id"
             class="grid-element-4"
             [ngStyle]="{background: getImage(movies.results[3]), backgroundSize: 'cover'}">
             <span class="grid-element-text">{{movies.results[3].title}}</span>
         </div>
         <div
+            [routerLink]="'/movie/' + movies.results[4].id"
             class="grid-element-5"
             [ngStyle]="{background: getImage(movies.results[4]), backgroundSize: 'cover'}">
             <span class="grid-element-text">{{movies.results[4].title}}</span>

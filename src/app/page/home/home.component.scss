@@ -11,6 +11,7 @@ $base: attr(img);
         display: flex;
         align-items: flex-end;
         cursor: pointer;
+        user-select: none;
 
         .grid-element-text {
             font-size: 3rem;
@@ -23,10 +24,21 @@ $base: attr(img);
         display: flex;
         align-items: flex-end;
         cursor: pointer;
+        user-select: none;
 
         .grid-element-text {
             font-size: 1rem;
         }
+    }
+
+    .grid-element-1:focus,
+    .grid-element-2:focus,
+    .grid-element-3:focus,
+    .grid-element-4:focus,
+    .grid-element-5:focus {
+        box-shadow: 0 0 0 0;
+        outline: 0;
+        text-decoration: none;
     }
 
     .grid-element-text {
