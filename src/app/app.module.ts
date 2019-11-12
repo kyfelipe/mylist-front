@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {NbThemeModule} from '@nebular/theme';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {LoaderInterceptor} from './shared/interceptor/loader.interceptor';
+import {LoaderModule} from './shared/component/loader/loader.module';
 
 @NgModule({
     declarations: [
@@ -16,6 +17,7 @@ import {LoaderInterceptor} from './shared/interceptor/loader.interceptor';
         AppRoutingModule,
         HttpClientModule,
         NbThemeModule.forRoot({name: 'dark'}),
+        LoaderModule,
     ],
     providers: [
         {
