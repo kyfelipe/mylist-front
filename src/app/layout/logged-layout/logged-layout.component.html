@@ -1,15 +1,25 @@
 <nb-layout>
     <nb-layout-header fixed>
         <div class="d-flex align-items-center justify-content-between no-box-shadow w-100">
-            <div class="cursor-pointer outline-none" style="padding: 1.125rem;" routerLink="/">
+            <div class="cursor-pointer outline-none" style="" routerLink="/">
                 <img class="w-50 h-auto" src="../../../assets/img/mylist-horizontal-light.svg" alt="Mylist logo"/>
             </div>
             <div>
                 <ul class="header-items">
-                    <li class="item">Opção 1</li>
+                    <!--<li class="item">Opção 1</li>
                     <li class="item">Opção 2</li>
                     <li class="item">Opção 3</li>
-                    <li class="item">Opção 4</li>
+                    <li class="item">Opção 4</li>-->
+                    <li class="item" routerLink="/login">
+                        <nb-user size="medium"
+                                 name=""
+                                 [picture]="personBase64"
+                                 title="Offline"
+                                 color="#fff"
+                                 badgeText=" "
+                                 badgeStatus="danger"
+                                 badgePosition="bottom right">
+                    </nb-user></li>
                 </ul>
             </div>
         </div>

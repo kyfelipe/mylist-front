@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 
 import {LoggedLayoutRoutingModule} from './logged-layout-routing.module';
 import {LoggedLayoutComponent} from './logged-layout.component';
-import {NbButtonModule, NbLayoutModule, NbSearchModule, NbSidebarModule} from '@nebular/theme';
+import {NbButtonModule, NbLayoutModule, NbSearchModule, NbSidebarModule, NbUserModule} from '@nebular/theme';
 
 
 @NgModule({
@@ -15,6 +15,7 @@ import {NbButtonModule, NbLayoutModule, NbSearchModule, NbSidebarModule} from '@
         NbButtonModule,
         NbSidebarModule.forRoot(),
         NbSearchModule,
+        NbUserModule,
     ]
 })
 export class LoggedLayoutModule { }
