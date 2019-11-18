@@ -1,9 +1,12 @@
 <div class="w-100 h-100 d-flex align-items-center justify-content-center">
-    <nb-card>
-        <nb-card-body style="padding-top: 1rem;padding-bottom: 1rem;">
-            <input type="text" nbInput fullWidth shape="rectangle" placeholder="Login" class="input">
-            <input type="password" nbInput fullWidth shape="rectangle" placeholder="Senha" class="input">
-            <button nbButton status="primary">Entrar</button>
+    <nb-card class="w-50">
+        <nb-card-body [formGroup]="loginForm" class="d-flex flex-column" style="padding-top: 1rem;padding-bottom: 1rem;">
+            <input type="text" formControlName="username" nbInput fullWidth shape="rectangle" placeholder="Usuário" class="input">
+            <input type="password" formControlName="password" nbInput fullWidth shape="rectangle" placeholder="Senha" class="input">
+            <div class="d-flex flex-column align-items-end">
+                <a routerLink="/cadastro" class="input">Criar conta</a>
+                <button nbButton (click)="login()" status="primary">Entrar</button>
+            </div>
         </nb-card-body>
     </nb-card>
 </div>

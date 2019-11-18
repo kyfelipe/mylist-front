@@ -1,0 +1,28 @@
+<div class="w-100 h-100 d-flex align-items-center justify-content-center">
+    <nb-card class="w-50">
+        <nb-card-body [formGroup]="registerForm" class="d-flex flex-column" style="padding-top: 1rem;padding-bottom: 1rem;">
+            <input type="email" formControlName="email" nbInput fullWidth shape="rectangle" placeholder="E-mail" class="input">
+            <span *ngIf="hasError('email', 'email')" class="message-error">
+                E-mail inválido
+            </span>
+            <input type="text" formControlName="username" nbInput fullWidth shape="rectangle" placeholder="Usuário (Apelido)" class="input">
+            <span *ngIf="hasError('username', 'required')" class="message-error">
+                O campo é obrigatório
+            </span>
+            <span *ngIf="hasError('username', 'minlength')" class="message-error">
+                O campo deve conter no mínimo 4 caracteres
+            </span>
+            <input type="password" formControlName="password" nbInput fullWidth shape="rectangle" placeholder="Senha" class="input">
+            <span *ngIf="hasError('password', 'required')" class="message-error">
+                O campo é obrigatório
+            </span>
+            <span *ngIf="hasError('password', 'minlength')" class="message-error">
+                O campo deve conter no mínimo 8 caracteres
+            </span>
+            <!--<input type="password" nbInput fullWidth shape="rectangle" placeholder="Confirmar senha" class="input">-->
+            <div class="d-flex flex-column align-items-end mt-2">
+                <button [disabled]="!registerForm.valid" (click)="register()" nbButton status="primary">Cadastrar</button>
+            </div>
+        </nb-card-body>
+    </nb-card>
+</div>

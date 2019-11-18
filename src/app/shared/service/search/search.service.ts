@@ -13,6 +13,6 @@ export class SearchService {
     constructor(private http: HttpClient) { }
 
     public search(query: string): Observable<Page<Movie>> {
-        return this.http.get<Page<Movie>>(this.url + '/movie/search', { params: { q: query } } );
+        return this.http.get<Page<Movie>>(this.url + '/api/movie/search', { params: { q: query } } );
     }
 }

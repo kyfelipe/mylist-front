@@ -13,10 +13,10 @@ export class MovieService {
     constructor(private http: HttpClient) { }
 
     findById(id: string): Observable<Movie> {
-        return this.http.get<Movie>(this.url + '/movie/' + id);
+        return this.http.get<Movie>(this.url + '/api/movie/' + id);
     }
 
     discover() {
-        return this.http.get<Page<Movie>>(this.url + '/movie/discover');
+        return this.http.get<Page<Movie>>(this.url + '/api/movie/discover');
     }
 }
