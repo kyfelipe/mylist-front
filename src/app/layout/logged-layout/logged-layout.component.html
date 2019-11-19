@@ -10,14 +10,14 @@
                     <li class="item">Opção 2</li>
                     <li class="item">Opção 3</li>
                     <li class="item">Opção 4</li>-->
-                    <li class="item" routerLink="/login">
+                    <li class="item" routerLink="/auth/login">
                         <nb-user size="medium"
                                  name=""
                                  [picture]="personBase64"
-                                 title="Offline"
+                                 [title]="userTitle"
                                  color="#fff"
                                  badgeText=" "
-                                 badgeStatus="danger"
+                                 [badgeStatus]="userBadgeStatus"
                                  badgePosition="bottom right">
                     </nb-user></li>
                 </ul>
@@ -35,5 +35,4 @@
     <nb-layout-column>
         <router-outlet></router-outlet>
     </nb-layout-column>
-
 </nb-layout>

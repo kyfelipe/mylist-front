@@ -18,8 +18,11 @@ export class LoginComponent implements OnInit {
     }
 
     public login() {
-        return this.userService.login(this.loginForm.get('username').value, this.loginForm.get('password').value)
-            .subscribe((response) => console.log(response.body), error => console.log(error));
+        return this.userService.login(this.loginForm.get('username').value, this.loginForm.get('password').value);
+    }
+
+    public hasError(field: string, error: string): boolean {
+        return this.loginForm.get(field).getError(error) && this.loginForm.get(field).touched;
     }
 
     private buildLoginForm() {

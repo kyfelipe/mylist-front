@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {UserService} from '../../shared/service/user/user.service';
 import {Router} from '@angular/router';
+
+import {UserService} from '../../shared/service/user/user.service';
 
 @Component({
     selector: 'ml-register',
@@ -23,11 +24,7 @@ export class RegisterComponent implements OnInit {
             email: this.registerForm.get('email').value,
             password: this.registerForm.get('password').value,
             username: this.registerForm.get('username').value
-        }).subscribe(() => this.router.navigate(['/login']), error => console.log(error));
-    }
-
-    private validRegister() {
-
+        }).subscribe(() => this.router.navigate(['/auth/login']), error => console.log(error));
     }
 
     public hasError(field: string, error: string): boolean {
