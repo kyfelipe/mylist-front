@@ -10,7 +10,7 @@
                     <li class="item">Opção 2</li>
                     <li class="item">Opção 3</li>
                     <li class="item">Opção 4</li>-->
-                    <li class="item" routerLink="/auth/login">
+                    <li class="item" [routerLink]="userIsLogged ? null : '/auth/login'">
                         <nb-user size="medium"
                                  name=""
                                  [picture]="personBase64"

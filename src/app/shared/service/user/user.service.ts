@@ -18,8 +18,9 @@ export class UserService {
         return this.http
             .post(this.url + '/login', {username, password}, {observe: 'response', responseType: 'text'})
             .subscribe((response) => {
+                console.log(response);
                 this.saveToken(response.body);
-                this.router.navigate(['/home']);
+                this.router.navigate(['/']);
             }, error => console.log(error));
     }
 
@@ -29,7 +30,7 @@ export class UserService {
 
     public logout() {
         localStorage.removeItem('token');
-        this.router.navigate(['/home']);
+        this.router.navigate(['/']);
     }
 
     private saveToken(token: string) {
